@@ -13,6 +13,11 @@ export class AlunosController{
     }
     @Get()
     findAll(){
-        return this.alunosService.create(createAlunoDto);
+        return this.alunosService.findAll();
     }
+  @Delete(':id')
+  @HttpCode(HttpStatus.OK)
+  remove(@Param('id') id: string ){
+    return this.alunosService.remove(id);
+  }
 }
